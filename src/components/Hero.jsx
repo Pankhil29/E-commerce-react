@@ -1,30 +1,44 @@
 import React from "react";
-import { Container, Button } from "react-bootstrap";
-import heroImg from "../assets/heroimg.avif";
-import "../styles/Hero.css";
-
+import "../styles/Hero.css"; // Make sure this file exists
+import img from "../assets/heroimg.avif";
 const Hero = () => {
   return (
-    <section className="hero-section d-flex align-items-center m-0">
-      <Container className="d-flex flex-column flex-md-row align-items-center justify-content-between gap-4">
-        <div data-aos="fade-right">
-          <h1 className="display-4 fw-bold mb-3 text-white">
-            Discover the Best <br /> Quality Products
-          </h1>
-          <p className="text-white mb-4">
-            Style meets comfort and innovation. Shop the latest trends now.
-          </p>
-          <Button variant="light" className="rounded-pill px-4 py-2">
-            Shop Now
-          </Button>
+    <section id="home" className="hero-section m-0 p-0 ">
+      <div id="heroCarousel" className="carousel slide" data-bs-ride="carousel">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img src={img} className="d-block w-100 hero-img" alt="Slide 1" />
+          </div>
+          <div className="carousel-item">
+            <img
+              src="https://via.placeholder.com/1200x400?text=Banner+2"
+              className="d-block w-100 hero-img"
+              alt="Slide 2"
+            />
+          </div>
+          <div className="carousel-item">
+            <img src={img} className="d-block w-100 hero-img" alt="Slide 3" />
+          </div>
         </div>
-        <img
-          src={heroImg}
-          alt="hero"
-          className="img-fluid hero-img"
-          data-aos="zoom-in"
-        />
-      </Container>
+        <button
+          className="carousel-control-prev"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="prev"
+        >
+          <span className="carousel-control-prev-icon" aria-hidden="true" />
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button
+          className="carousel-control-next"
+          type="button"
+          data-bs-target="#heroCarousel"
+          data-bs-slide="next"
+        >
+          <span className="carousel-control-next-icon" aria-hidden="true" />
+          <span className="visually-hidden">Next</span>
+        </button>
+      </div>
     </section>
   );
 };

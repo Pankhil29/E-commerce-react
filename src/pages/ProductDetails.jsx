@@ -5,6 +5,7 @@ import { useCart } from "../context/CartContext";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "../styles/ProductDetails.css";
+import Products from "./Products";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -42,6 +43,7 @@ const ProductDetails = () => {
           </button>
         </div>
       </div>
+      <Products />
     </div>
   );
 };

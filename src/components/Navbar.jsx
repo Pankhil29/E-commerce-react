@@ -7,9 +7,10 @@ const Navbar = () => {
   const navigate = useNavigate();
   const { cart } = useCart();
   const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
   const scrollToSection = (id) => {
     if (window.location.pathname !== "/") {
-      navigate(`/#${id}`); // will reload home page with hash
+      navigate(`/#${id}`);
     } else {
       const section = document.getElementById(id);
       section?.scrollIntoView({ behavior: "smooth" });
@@ -17,9 +18,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg sticky-top">
+    <nav className="navbar navbar-expand-lg navbar-light bg-white sticky-top">
       <div className="container">
-        <NavLink className="navbar-brand text-black" to="/">
+        <NavLink className="navbar-brand fw-bold" to="/">
           Cara
         </NavLink>
         <button
@@ -33,35 +34,39 @@ const Navbar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
+
         <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <a className="nav-link" onClick={() => scrollToSection("home")}>
+          <ul className="navbar-nav ms-auto text-center">
+            <li className="nav-item pt-1">
+              <button
+                className="nav-link btn-link"
+                onClick={() => scrollToSection("home")}
+              >
                 Home
-              </a>
+              </button>
             </li>
-            <li className="nav-item">
-              <a
-                className="nav-link"
+            <li className="nav-item pt-1">
+              <button
+                className="nav-link btn-link"
                 onClick={() => scrollToSection("featured")}
               >
                 Featured
-              </a>
+              </button>
             </li>
-            <li className="nav-item">
-              <a
-                className="nav-link"
+            <li className="nav-item pt-1">
+              <button
+                className="nav-link btn-link"
                 onClick={() => scrollToSection("services")}
               >
                 Services
-              </a>
+              </button>
             </li>
-            <li className="nav-item">
+            <li className="nav-item pt-1 ">
               <NavLink className="nav-link" to="/products">
                 Products
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item ms-auto">
               <NavLink className="btn btn-cart" to="/cart">
                 🛒 Cart ({totalItems})
               </NavLink>

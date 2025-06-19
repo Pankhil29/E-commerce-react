@@ -1,26 +1,32 @@
 /* ------------------- Global ------------------- */
 
 
-html {
-  overflow-x: hidden;
-  /* is the causing of the white space  */
-}
+
 
 * {
 
   box-sizing: border-box;
-
   width: 100%;
 }
 
+
+html,
 body {
-  padding: 0;
+  width: 100%;
+  max-width: 100%;
   margin: 0;
+  padding: 0;
+  overflow-x: hidden !important;
+  /* is the causing of the white space  */
+}
+
+body {
+
   font-family: 'Poppins', sans-serif;
   background-color: #e6f6ff;
   color: #121212;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+
   /*is the causing of the white space */
 
 }

@@ -1,16 +1,11 @@
 .hero-section {
-    /* background: linear-gradient(145deg, #96e6a1); */
-    background: #a3dcfd;
-    padding-top: 100px;
-    color: #121212;
-    overflow: hidden;
-    text-align: center;
+    margin-top: 60px;
+    /* Adjust if you have fixed navbar */
 }
 
-.hero-section .hero-img {
-    max-width: 500px;
-    filter: drop-shadow(0 0 40px rgba(54, 209, 220, 0.8));
-    border-radius: 20px;
-    display: block;
-    margin: 20px auto 0;
+.hero-img {
+    height: 350px;
+    /* You can reduce/increase this */
+    object-fit: cover;
+    border-radius: 12px;
 }

@@ -53,52 +53,58 @@ const Products = () => {
     <div className="container my-5">
       <div className="row">
         {/* Filters */}
-        <div className="col-md-3 mb-4">
+        <div className="col-md-6 mb-4 w-100">
           <div className="filter-box p-3 shadow-sm rounded bg-white">
             <h5 className="mb-3">Filters</h5>
-
-            <label>Search</label>
-            <input
-              className="form-control mb-3"
-              placeholder="Search products..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-
-            <label>Category</label>
-            <select
-              className="form-select mb-3"
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-            >
-              {uniqueCategories.map((cat, i) => (
-                <option key={i} value={cat}>
-                  {cat}
-                </option>
-              ))}
-            </select>
-
-            <label>Sort By</label>
-            <select
-              className="form-select"
-              value={sort}
-              onChange={(e) => setSort(e.target.value)}
-            >
-              <option value="">None</option>
-              <option value="low">Price: Low to High</option>
-              <option value="high">Price: High to Low</option>
-              <option value="rating">Rating</option>
-            </select>
+            <div className="d-flex gap-2">
+              <div>
+                <label>Search</label>
+                <input
+                  className="form-control mb-3"
+                  placeholder="Search products..."
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+              </div>
+              <div>
+                <label>Category</label>
+                <select
+                  className="form-select mb-3"
+                  value={category}
+                  onChange={(e) => setCategory(e.target.value)}
+                >
+                  {uniqueCategories.map((cat, i) => (
+                    <option key={i} value={cat}>
+                      {cat}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label>Sort By</label>
+                <select
+                  className="form-select"
+                  value={sort}
+                  onChange={(e) => setSort(e.target.value)}
+                >
+                  <option value="">None</option>
+                  <option value="low">Price: Low to High</option>
+                  <option value="high">Price: High to Low</option>
+                  <option value="rating">Rating</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
-
+      </div>
+      <div className="row ">
         {/* Products */}
-        <div className="col-md-9">
+        <div className="col-md-9 w-100">
           <h3 className="mb-4">
             Products{" "}
             <span className="text-muted">({filtered.length} found)</span>
           </h3>
-          <div className="row gy-4">
+          <div className="row gy-4 ">
             {filtered.map((product) => (
               <div className="col-12 col-sm-6 col-lg-3" key={product.id}>
                 <div className="card h-100 shadow-sm border rounded product-card">
