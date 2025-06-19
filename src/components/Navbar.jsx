@@ -1,10 +1,12 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/Navbar.css";
+import { useCart } from "../context/CartContext";
 
 const Navbar = () => {
   const navigate = useNavigate();
-
+  const { cart } = useCart();
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   const scrollToSection = (id) => {
     if (window.location.pathname !== "/") {
       navigate(`/#${id}`); // will reload home page with hash
@@ -61,7 +63,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <NavLink className="btn btn-cart" to="/cart">
-                🛒 Cart
+                🛒 Cart ({totalItems})
               </NavLink>
             </li>
           </ul>

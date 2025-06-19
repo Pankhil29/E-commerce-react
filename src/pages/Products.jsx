@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useCart } from "../context/CartContext";
 import "../styles/Products.css"; // You can customize more
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const { addToCart } = useCart();
@@ -101,15 +102,22 @@ const Products = () => {
             {filtered.map((product) => (
               <div className="col-12 col-sm-6 col-lg-3" key={product.id}>
                 <div className="card h-100 shadow-sm border rounded product-card">
-                  <img
-                    src={product.thumbnail}
-                    alt={product.title}
-                    className="card-img-top img-fluid product-img"
-                    style={{ height: "180px", objectFit: "contain" }}
-                  />
+                  <Link to={`/product/${product.id}`}>
+                    <img
+                      src={product.thumbnail}
+                      alt={product.title}
+                      className="card-img-top img-fluid product-img"
+                      style={{ height: "180px", objectFit: "contain" }}
+                    />
+                  </Link>
                   <div className="card-body">
                     <small className="text-muted">{product.brand}</small>
-                    <h6 className="fw-bold mt-1">{product.title}</h6>
+                    <Link
+                      to={`/product/${product.id}`}
+                      className="text-decoration-none text-dark"
+                    >
+                      <h6 className="fw-bold mt-1">{product.title}</h6>
+                    </Link>
                     <div className="text-warning mb-1">
                       {"⭐".repeat(Math.floor(product.rating))}
                     </div>

@@ -1,0 +1,17 @@
+/* src/styles/Cart.css */
+.cart-page {
+    color: white;
+}
+
+.product-card-cart {
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+    border-radius: 20px;
+    overflow: hidden;
+    color: #121212;
+}
+
+.product-card-cart img {
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+}

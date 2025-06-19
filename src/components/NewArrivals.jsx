@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import "../styles/NewArrivals.css";
+import { useCart } from "../context/CartContext";
 
 const NewArrivals = () => {
   const [products, setProducts] = useState([]);
+  const { addToCart } = useCart(); // ✅ using global cart logic
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products?limit=4")
@@ -22,10 +24,6 @@ const NewArrivals = () => {
       );
   }, []);
 
-  const addToCart = (product) => {
-    console.log("Add to cart:", product);
-  };
-
   return (
     <section className="py-5 bg-white" id="new">
       <div className="container">
@@ -35,7 +33,7 @@ const NewArrivals = () => {
             <ProductCard
               key={product.id}
               product={product}
-              addToCart={addToCart}
+              addToCart={addToCart} // ✅ use the global one
             />
           ))}
         </div>

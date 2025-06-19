@@ -5,7 +5,7 @@ import "../styles/Hero.css";
 
 const Hero = () => {
   return (
-    <section className="hero-section d-flex align-items-center">
+    <section className="hero-section d-flex align-items-center m-0">
       <Container className="d-flex flex-column flex-md-row align-items-center justify-content-between gap-4">
         <div data-aos="fade-right">
           <h1 className="display-4 fw-bold mb-3 text-white">

@@ -14,6 +14,7 @@ import AOS from "aos";
 import "./App.css";
 import "aos/dist/aos.css";
 import ProductDetails from "./pages/ProductDetails";
+import Cart from "./context/Cart";
 
 function App() {
   useEffect(() => {
@@ -23,7 +24,7 @@ function App() {
       const links = document.querySelectorAll(".nav-link");
       links.forEach((link) => {
         const href = link.getAttribute("href");
-        if (!href || !href.startsWith("#")) return; // 🔐 skip invalid ones
+        if (!href || !href.startsWith("#")) return;
 
         const section = document.querySelector(href);
         if (section) {
@@ -45,7 +46,6 @@ function App() {
     <>
       <Navbar />
       <Routes>
-        {/* Homepage - all sections */}
         <Route
           path="/"
           element={
@@ -63,6 +63,7 @@ function App() {
 
         <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </>
   );

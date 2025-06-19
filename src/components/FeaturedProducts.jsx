@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import { useCart } from "../context/CartContext"; // ✅ use global cart
 
-const FeaturedProducts = ({ addToCart }) => {
+const FeaturedProducts = () => {
   const [featured, setFeatured] = useState([]);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const fetchFeatured = async () => {
@@ -19,7 +21,7 @@ const FeaturedProducts = ({ addToCart }) => {
   }, []);
 
   return (
-    <section className="py-5 bg-light" id="featured">
+    <section className="py-5 bg-light" id="featured" data-aos="fade-up">
       <div className="container">
         <h2 className="text-center mb-4">Featured Products</h2>
         <div className="row">
