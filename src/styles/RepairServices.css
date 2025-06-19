@@ -1,0 +1,10 @@
+.repair-section {
+    background: linear-gradient(to right, #c2e9fb, #a1c4fd);
+    color: #121212;
+}
+
+.repair-section img {
+    max-width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(91, 134, 229, 0.4);
+}

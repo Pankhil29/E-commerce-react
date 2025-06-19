@@ -1,0 +1,29 @@
+.product-card {
+    transition: all 0.3s ease;
+    border-radius: 16px;
+}
+
+.product-card:hover {
+    /* transform: translateY(-6px); */
+    /* background: linear-gradient(to right, #a1c4fd, #c2e9fb); */
+    color: #121212;
+}
+
+.product-card img {
+    border-radius: 16px 16px 0 0;
+    height: 180px;
+    object-fit: cover;
+}
+
+.btn-add {
+    border-radius: 30px !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.products .product-card .card-body button:hover {
+
+    /* box-shadow: 0 0 15px rgba(0, 200, 255, 0.3); */
+    background-color: black;
+    color: white;
+}

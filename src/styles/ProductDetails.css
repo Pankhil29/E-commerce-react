@@ -1,0 +1,12 @@
+.btn-add {
+    border-radius: 30px !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.product-details .btn-add:hover {
+
+    /* box-shadow: 0 0 15px rgba(0, 200, 255, 0.3); */
+    background-color: black;
+    color: white;
+}

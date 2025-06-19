@@ -1,24 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+// ✅ App.jsx (Main Entry)
+import React, { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import FeaturedProducts from "./components/FeaturedProducts";
+import RepairServices from "./components/RepairServices";
+import NewArrivals from "./components/NewArrivals";
+import Footer from "./components/Footer";
+import Newsletter from "./components/Newsletter";
+import Services from "./components/Services";
+import Products from "./pages/Products";
+import AOS from "aos";
+import "./App.css";
+import "aos/dist/aos.css";
+import ProductDetails from "./pages/ProductDetails";
 
 function App() {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+
+    const handleScroll = () => {
+      const links = document.querySelectorAll(".nav-link");
+      links.forEach((link) => {
+        const href = link.getAttribute("href");
+        if (!href || !href.startsWith("#")) return; // 🔐 skip invalid ones
+
+        const section = document.querySelector(href);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            link.classList.add("active");
+          } else {
+            link.classList.remove("active");
+          }
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        {/* Homepage - all sections */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <FeaturedProducts />
+              <Services />
+              <RepairServices />
+              <NewArrivals />
+              <Newsletter />
+              <Footer />
+            </>
+          }
+        />
+
+        <Route path="/products" element={<Products />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+      </Routes>
+    </>
   );
 }
 

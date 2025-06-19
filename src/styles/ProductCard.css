@@ -1,0 +1,28 @@
+.product-card {
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-img {
+    height: 180px;
+    width: 100%;
+    object-fit: contain;
+}
+
+
+
+
+
+
+.cart-btn {
+    bottom: 15px;
+    right: 15px;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

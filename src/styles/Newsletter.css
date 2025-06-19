@@ -1,0 +1,24 @@
+.newsletter-section {
+    background: #dbefff;
+    color: #121212;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.newsletter-section input[type="email"] {
+    width: 300px;
+    max-width: 100%;
+    padding: 10px 15px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.newsletter-section button {
+    background: linear-gradient(to right, #36d1dc, #5b86e5);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: white;
+    font-weight: 500;
+}
