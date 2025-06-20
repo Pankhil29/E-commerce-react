@@ -3,18 +3,15 @@ import React, { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import FeaturedProducts from "./components/FeaturedProducts";
-import RepairServices from "./components/RepairServices";
-import NewArrivals from "./components/NewArrivals";
-import Footer from "./components/Footer";
-import Newsletter from "./components/Newsletter";
-import Services from "./components/Services";
-import Products from "./pages/Products";
+
 import AOS from "aos";
 import "./App.css";
 import "aos/dist/aos.css";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./context/Cart";
+import ReviewsSection from "./components/Review";
+import Home from "./components/Home";
+import Products from "./pages/Products";
 
 function App() {
   useEffect(() => {
@@ -44,23 +41,8 @@ function App() {
 
   return (
     <>
-      <Navbar />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Hero />
-              <FeaturedProducts />
-              <Services />
-              <RepairServices />
-              <NewArrivals />
-              <Newsletter />
-              <Footer />
-            </>
-          }
-        />
-
+        <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />

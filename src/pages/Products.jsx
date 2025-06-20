@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useCart } from "../context/CartContext";
-import "../styles/Products.css"; // You can customize more
+import "../styles/Products.css";
 import { Link } from "react-router-dom";
 
 const Products = () => {

@@ -25,18 +25,13 @@ const ProductCard = ({ product, addToCart }) => {
           </Link>
           <div className="text-warning mb-2">
             {Array.from({ length: product.rating }, (_, i) => (
-              <i key={i} className="fas fa-star">
-                <FaStar />
-              </i>
+              <i key={i} className="fas fa-star"></i>
             ))}
           </div>
           <div className="mt-auto d-flex justify-content-between align-items-center">
             <h6 className="text-success fw-bold">₹{product.price}</h6>
             <button className="btn btn-outline-primary btn-sm">
-              <i className="fas fa-cart-plus me-1">
-                <FaShoppingCart />
-              </i>{" "}
-              Add to cart
+              <i className="fas fa-cart-plus me-1"></i> Add to cart
             </button>
           </div>
         </div>
